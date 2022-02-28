@@ -319,7 +319,19 @@ namespace DirectoryConnect
                 }
 
                 //コピー元ディレクトリのファイルをコピー先ディレクトリへコピーする
-                strSrcfiles = System.IO.Directory.GetFiles(strSrcDirSepa);
+                try
+                {
+                    strSrcfiles = System.IO.Directory.GetFiles(strSrcDirSepa);
+                }
+                catch (Exception e)
+                {
+                    strErrMsg += strSrcDirSepa + " のコピー中にエラーが発生しました。" + Environment.NewLine +
+                                   e.Message + Environment.NewLine + Environment.NewLine;
+
+                    //エラーが発生した時点で呼び出し元へ処理を戻す
+                    return -1;
+                }
+
                 foreach (string strSrcFile in strSrcfiles)
                 {
                     try
