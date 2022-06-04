@@ -91,7 +91,7 @@ namespace DirectoryConnect
 
             //全てのコピー元ディレクトリにあるファイル総数を取得する
             //コピー処理に使う値を整理する
-            delDispMsg("進捗を表示するためにバックアップ対象ファイルの総数集計しています...");
+            delDispMsg("進捗を表示するためにバックアップ対象ファイルの総数を集計しています...");
             for (int i1 = 0; i1 < strSrcAndDest.Count; i1++)
             {
                 int iResult = 0;
@@ -117,7 +117,7 @@ namespace DirectoryConnect
                 copyDirInfo.Add(wkCopyDirInfo);
             }
             Console.CursorLeft = 0;
-            delDispMsg("                                                                   ");
+            delDispMsg("                                                                     ");
             Console.CursorLeft = 0;
 
             //進捗に誤差が出る可能性があることを表示する
